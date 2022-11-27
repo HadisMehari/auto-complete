@@ -1,5 +1,4 @@
 package com.bofa.autocomplete;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,7 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AutoCompleteApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AutoCompleteApplication.class, args);
+
+        SpringApplication.run(AutoCompleteApplication.class, args);
+
 	}
+
 
 }

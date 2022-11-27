@@ -17,15 +17,8 @@ import java.util.Map;
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<?> constraintViolationException(ConstraintViolationException ex) {
-        List<String> errors = new ArrayList<>();
-
-        ex.getConstraintViolations()
-                .forEach(cv -> errors.add(cv.getMessage()));
-
-        Map<String, List<String>> result = new HashMap<>();
-
-        result.put("errors", errors);
-
+        Map<String, String> result = new HashMap<>();
+        result.put("errors", "The Length Should be minimum 3 character. The first character should be [a-zA-Z], the second and the third characters should be [a-zA-Z0-9]");
         return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
     }
 }
